@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/auth",authRoute);
+app.use("/api/messages", messageRoutes);
 
 app.listen(PORT,()=>{
     console.log("app ooduthu in port:" +PORT);
