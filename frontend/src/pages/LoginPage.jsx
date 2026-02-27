@@ -14,18 +14,19 @@ function LoginPage() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center p-4 bg-slate-900">
-      <div className="relative w-full max-w-6xl md:h-[800px] h-[650px]">
+    <div className="w-full flex items-center justify-center p-4">
+      <div className="w-full max-w-6xl md:h-[800px] h-[650px]">
         <BorderAnimatedContainer>
+          <div className="relative flex items-center bg-gray-800/50 ">
           <div className="w-full flex flex-col md:flex-row">
             {/* FORM CLOUMN - LEFT SIDE */}
             <div className="md:w-1/2 p-8 flex items-center justify-center md:border-r border-slate-600/30">
               <div className="w-full max-w-md">
                 {/* HEADING TEXT */}
                 <div className="text-center mb-8">
-                  <MessageCircleIcon className="w-12 h-12 mx-auto text-slate-400 mb-4" />
+                  <MessageCircleIcon className="w-12 h-12 mx-auto text-white mb-4" />
                   <h2 className="text-2xl font-bold text-slate-200 mb-2">Welcome Back</h2>
-                  <p className="text-slate-400">Login to access to your account</p>
+                  <p className="text-white">Login to access to your account</p>
                 </div>
 
                 {/* FORM */}
@@ -41,7 +42,7 @@ function LoginPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="input"
-                        placeholder="johndoe@gmail.com"
+                        placeholder="your@gmail.com"
                       />
                     </div>
                   </div>
@@ -89,7 +90,7 @@ function LoginPage() {
                   className="w-full h-auto object-contain"
                 />
                 <div className="mt-6 text-center">
-                  <h3 className="text-xl font-medium text-cyan-400">Connect anytime, anywhere</h3>
+                  <h3 className="text-xl font-medium text-white">Connect anytime, anywhere</h3>
 
                   <div className="mt-4 flex justify-center gap-4">
                     <span className="auth-badge">Free</span>
@@ -100,6 +101,7 @@ function LoginPage() {
               </div>
             </div>
           </div>
+        </div>
         </BorderAnimatedContainer>
       </div>
     </div>

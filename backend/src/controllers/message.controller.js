@@ -104,3 +104,39 @@ export const getChatPartners = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+export const addUserById = async (req, res) => {
+  try {
+    const { id: userIdToAdd } = req.params;
+    const loggedInUserId = req.user._id;
+    if (loggedInUserId.equals(userIdToAdd)) {
+      return res.status(400).json({ message: "Cannot add yourself as a contact." });
+    }
+    const userToAdd = await User.findById(userIdToAdd);
+    if (!userToAdd) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    const alreadyAdded = await Message.exists({
+      $or: [
+        { senderId: loggedInUserId, receiverId: userIdToAdd },
+        { senderId: userIdToAdd, receiverId: loggedInUserId },
+      ],
+    });
+    if (alreadyAdded) {
+      return res.status(400).json({ message: "User is already a contact." });
+    }
+
+    const newMessage = new Message({
+      senderId: loggedInUserId,
+      receiverId: userIdToAdd,
+      text: "",
+    });
+
+    await newMessage.save();
+    res.status(201).json(newMessage);
+  } catch (error) {
+    console.log("Error in addUserById controller: ", error.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
