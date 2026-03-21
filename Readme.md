@@ -1,10 +1,10 @@
-# 💬 ChatApp — MERN + Socket.IO + Redux + Vite
+#  ChatApp — MERN + Socket.IO + Redux + Vite
 
 A full-featured real-time chat application with 1-on-1 messaging, group chats, user search, and live online status.
 
 ---
 
-## 🏗 Tech Stack
+##  Tech Stack
 
 | Layer      | Technology                          |
 |------------|-------------------------------------|
@@ -58,7 +58,7 @@ Open `http://localhost:5173` in your browser.
 
 ---
 
-## 🔌 Redux + Socket.IO Architecture
+##  Redux + Socket.IO Architecture
 
 The key architectural decision is using **Socket.IO as a Redux middleware**:
 
@@ -82,7 +82,7 @@ This means all state flows through Redux — no separate context needed.
 
 
 
-## 🔄 Socket Events
+##  Socket Events
 
 | Event               | Direction          | Purpose                    |
 |---------------------|--------------------|-----------------------------|
@@ -105,15 +105,15 @@ This means all state flows through Redux — no separate context needed.
 
 
 
-## ✨ Features
+##  Features
 
-- ✅ JWT auth with HTTP-only cookies
-- ✅ Real-time 1-on-1 messaging
-- ✅ Real-time group chat
-- ✅ Search users by username or unique ID (e.g. `usr_a3f9k`)
-- ✅ Create group with members
-- ✅ Add/remove group members (admin only)
-- ✅ Typing indicators
-- ✅ Online/offline status
-- ✅ Socket.IO as Redux middleware
-- ✅ DaisyUI night theme
+-  JWT auth with HTTP-only cookies
+-  Real-time 1-on-1 messaging
+-  Real-time group chat
+-  Search users by username or unique ID (e.g. `usr_a3f9k`)
+-  Create group with members
+-  Add/remove group members (admin only)
+-  Typing indicators
+-  Online/offline status
+-  Socket.IO as Redux middleware
+-  DaisyUI night theme
